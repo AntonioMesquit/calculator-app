@@ -98,21 +98,30 @@ font-size: 4rem;
     grid-template-rows: repeat(4, auto);
     justify-items: center;
     padding: 1rem;
-    row-gap: 1rem;
+    gap: 1.2rem;
   
 }
 main{
     background-color: var(--backnumber);
     border-radius: 1.5rem;
     margin-top: 1rem;
+
 }
 .v{
 background-color: var(--backgroundnumbers);
 width: 5rem;
 height: 5rem;
+
 }
 button{
 
     width: 6.4rem;
-    height: 6.7rem;
+    height: 5.7rem;
+    border-radius: 0.8rem;
+    border: none;
+    outline: none;
+    font-size: 3rem;
+    cursor: pointer;
+    padding: 0.8rem;
+    box-shadow: 0rem 0.5rem hsl(28, 16%, 65%);;
 }
