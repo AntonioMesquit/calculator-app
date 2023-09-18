@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap');
+
+
+:root{
+    --background: #3B4664;
+    --backnumber: #252D44;
+    --input: #181F32;
+    --delreset: #647299;
+    --numbers: #404857;
+    font-size: 62.5%;
+    --backgroundnumbers: #EAE3DB;
+    --boxshadownumbers: #B2A295;
+
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'League Spartan', sans-serif;
+}
+body{
+    background-color: var(--background);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+ 
+}
+.card{
+    margin-top: 20rem;
+    width: 35rem;
+}
+header{
+    color: white;
+    display: flex;
+    gap: 10rem;
+    width: 100%;
+    align-items: center;
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    padding-inline: 1rem;
+    
+
+}
+.right{
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+}
+.chose{
+    width: 7.0rem;
+    height: 2.5rem;
+    background-color:#232C43;
+    border-radius: 3rem;
+    display: flex;
+    position: relative;
+    align-items: center;
+}
+.numbers{
+    display: flex;
+    gap: 1rem;
+    font-size: 1.9rem;
+    margin-bottom: 1rem;
+}
+.numbers p:first-child{
+margin-left: 0.7rem;
+}
+.bar{
+    background-color: red;
+    width: 1.2rem;
+    height: 1.2rem;
+    border-radius: 50%;
+    position: absolute;
+    left: 0.55rem;
+
+}
+.theme{
+    font-size: 1.8rem;
+    margin-top: 2.9rem;
+}
+.result{
+    color: white;
+    background-color: var(--input);
+    width: 100%;
+    height: 8rem;
+    border-radius: 1.5rem;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    padding: 1.5rem;
+    overflow: hidden;
+}
+.number{
+font-size: 4rem;
+}
+.numbers-calc{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, auto);
+    justify-items: center;
+    padding: 1rem;
+    row-gap: 1rem;
+  
+}
+main{
+    background-color: var(--backnumber);
+    border-radius: 1.5rem;
+    margin-top: 1rem;
+}
+.v{
+background-color: var(--backgroundnumbers);
+width: 5rem;
+height: 5rem;
+}
+button{
+
+    width: 6.4rem;
+    height: 6.7rem;
+}
