@@ -7,7 +7,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   
   <title>Frontend Mentor | Calculator app</title>
-  <script src="js/script.js" type="module" ></script>
+  <script src="js/script.js" type="module" defer></script>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -32,29 +32,35 @@
   
   </header>
   <div class="result">
-  <p class="number">0</p>
+    <p class="previus">0</p>
+  <p class="current">0</p>
   </div>
   <main>
     <div class="numbers-calc">
-    <button>7</button>
-    <button>8</button>
-    <button>9</button>
+    <button class="valueNumber">7</button>
+    <button class="valueNumber">8</button>
+    <button class="valueNumber">9</button>
     <button>DEL</button>
-    <button>4</button>
-    <button>5</button>
-    <button>6</button>
-    <button>+</button>
-    <button>1</button>
-    <button>2</button>
-    <button>3</button>
-    <button>-</button>
-    <button>.</button>
-    <button>0</button>
-    <button>/</button>
-    <button>*</button>
+    <button class="valueNumber">4</button>
+    <button class="valueNumber">5</button>
+    <button class="valueNumber">6</button>
+    <button class="valueOperetor">+</button>
+    <button class="valueNumber">1</button>
+    <button class="valueNumber">2</button>
+    <button class="valueNumber">3</button>
+    <button class="valueOperetor">-</button>
+    <button class="valueNumber">.</button>
+    <button class="valueNumber">0</button>
+    <button class="valueOperetor">/</button>
+    <button class="valueOperetor">*</button>
     </div>
     <div class="respost">
-
+    <div class="reset">
+      <button class="reset-button">RESET</button>
+    </div>
+    <div class="igual">
+      <button class="igual-button">=</button>
+    </div>
     </div>
 
   </main>
