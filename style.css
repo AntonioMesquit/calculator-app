@@ -10,6 +10,16 @@
     font-size: 62.5%;
     --backgroundnumbers: #EAE3DB;
     --boxshadownumbers: #B2A295;
+    --text: #fff;
+    --igual: rgb(209, 63, 48);
+    --input-bars: #232C43;
+    --result: #fff;
+    --shadow: rgb(180, 165, 151);
+    --reset: rgb(99, 112, 151);
+    --shadow-reset:rgb(64, 78, 114);
+    --backnum: rgb(240, 240, 240);
+    --zz: rgb(0, 0, 0);
+    --igual-shadow: rgb(147, 38, 26);
 
 }
 *{
@@ -17,6 +27,7 @@
     margin: 0;
     box-sizing: border-box;
     font-family: 'League Spartan', sans-serif;
+    transition: .3s;
 }
 body{
     background-color: var(--background);
@@ -25,12 +36,53 @@ body{
     justify-content: center;
  
 }
+html.default :root{
+    --background: #3B4664;
+    --backnumber: #252D44;
+    --input: #181F32;
+    --delreset: #647299;
+    --numbers: #404857;
+    font-size: 62.5%;
+    --backgroundnumbers: #EAE3DB;
+    --boxshadownumbers: #B2A295;
+    --text: #fff;
+    
+}
+html.dark:root{
+    --background: rgb(22, 6, 40);
+    --backnumber: rgb(29, 9, 52);
+    --text: rgb(255, 229, 61);
+    --backnumber: rgb(29, 9, 52);
+    --input: rgb(29, 9, 52);
+    --input-bars: rgb(29, 9, 52);
+    --result: rgb(255, 229, 61);
+    --shadow: rgb(135, 28, 156);
+    --reset: hsl(281, 89%, 26%);
+    --backgroundnumbers: rgb(52, 28, 79);
+    --shadow-reset: rgb(188, 21, 244);
+    --backnum: hsl(268, 47%, 21%);
+    --zz: yellow;
+    --igual: rgb(0, 224, 209);
+    --igual-shadow: rgba(0, 224, 209, 0.701);
+}
+html.white:root{
+    --background: rgb(230, 230, 230);
+    --backnumber: #252D44;
+    --text: rgb(55, 53, 49);
+    --backnumber: rgb(209, 204, 204);
+    --input: #ffffffcb;
+    --input-bars: rgb(210, 205, 204);
+    --result: rgb(55, 56, 50);
+    --shadow: rgb(166, 157, 145);
+    --reset: rgb(55, 127, 134);
+    --shadow-reset: rgb(27, 95, 101);
+}
 .card{
     margin-top: 20rem;
     width: 35rem;
 }
 header{
-    color: white;
+    color: var(--text);
     display: flex;
     gap: 10rem;
     width: 100%;
@@ -49,7 +101,7 @@ header{
 .chose{
     width: 7.0rem;
     height: 2.5rem;
-    background-color:#232C43;
+    background-color: var(--input-bars);
     border-radius: 3rem;
     display: flex;
     position: relative;
@@ -62,9 +114,9 @@ header{
     margin-bottom: 1rem;
 }
 .numbers p:first-child{
-margin-left: 0.7rem;
+margin-left: 1.3rem;
 }
-.bar{
+.bar:nth-child(1){
     background-color: red;
     width: 1.2rem;
     height: 1.2rem;
@@ -72,13 +124,53 @@ margin-left: 0.7rem;
     position: absolute;
     left: 0.55rem;
 
+    cursor: pointer;
+    opacity: 0;
+
+}
+.bar:nth-child(2){
+    background-color: rgb(200, 85, 0);
+    width: 1.2rem;
+    height: 1.2rem;
+    border-radius: 50%;
+    position: absolute;
+    left: 40%;
+    opacity: 0;
+    cursor: pointer;
+
+}
+.bar:nth-child(3){
+    background-color: rgb(2, 223, 205);
+    width: 1.2rem;
+    height: 1.2rem;
+    border-radius: 50%;
+    position: absolute;
+    left: 70%;
+    opacity: 0;
+    cursor: pointer;
+
+}
+.bar:nth-child(1).active{
+    opacity: 1;
+}
+.bar:nth-child(2).active{
+    opacity: 1;
+}
+.bar:nth-child(3).active{
+    opacity: 1;
+}
+
+
+.bar:hover{
+    transition: .2s;
+    opacity: 0.7;
 }
 .theme{
     font-size: 1.8rem;
     margin-top: 2.9rem;
 }
 .result{
-    color: white;
+    color: var(--result);
     background-color: var(--input);
     width: 100%;
     height: 8rem;
@@ -90,11 +182,11 @@ margin-left: 0.7rem;
     padding: 1.5rem;
     overflow: hidden;
 }
-.previus{
+#previus{
     font-size: 2.3rem;
     margin-bottom: .5rem;
 }
-.current{
+#current{
 font-size: 3.5rem;
 }
 .numbers-calc{
@@ -102,7 +194,7 @@ font-size: 3.5rem;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(4, auto);
     justify-items: center;
-    padding: 2rem;
+    padding: 2rem 2rem 1.5rem 2rem;
     gap: 1.5rem;
   
 }
@@ -123,42 +215,66 @@ button{
 
     width: 100%;
     height: 5.7rem;
+    color: var(--zz);
+    background-color: var(--backnum);
     border-radius: 0.8rem;
     border: none;
     outline: none;
     font-size: 3rem;
     cursor: pointer;
     padding: 0.8rem;
-    box-shadow: 0rem 0.5rem hsl(28, 16%, 65%);;
+    box-shadow: 0rem 0.3rem var(--shadow);
 }
 .respost{
     display: flex;
     width: 100%;
+    gap: 1rem;
 }
 .igual, .reset{
     width: 50%;
-    padding: 1.5rem;
     display: flex;
     align-items: center;
     justify-content: center;
+}
+.igual{
+    padding-right: 2rem;
+    
+    padding-bottom: 2rem;
+    box-shadow: ;
+}
+.reset{
+    padding-bottom: 2rem;
+    padding-left: 2rem;
+}
+.delete{
+    background-color: var(--reset);
+    color: white;
+    font-size: 2rem;
+    box-shadow: 0 .3rem var(--shadow-reset);
 }
 .igual button, .reset button{
     width: 100%;
     height: 4.5rem;
 }
 .igual button{
-   background-color: rgb(208, 63, 47);
-   box-shadow: 0rem 0.5rem rgb(147, 38, 26);
+   background-color: var(--igual);
+   box-shadow: 0rem 0.3rem var(--igual-shadow);
    color: white;
    font-size: 3rem;
 }
 .reset button{
-    background-color: rgb(99, 112, 151);
+    background-color: var(--reset);
     color: white;
-    box-shadow: 0 .5rem rgb(64, 78, 114);
+    box-shadow: 0 .3rem var(--shadow-reset);
     font-size: 2rem;
 }
 button:active{
     transform: scale(1) translateY(.5rem);
+    box-shadow: none;
 
+}
+@media screen and (max-width: 800px){
+.card{
+    margin-top: 15rem;
+}
 }
