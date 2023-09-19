@@ -275,6 +275,6 @@ button:active{
 }
 @media screen and (max-width: 800px){
 .card{
-    margin-top: 15rem;
+    margin-top: 3rem;
 }
 }
