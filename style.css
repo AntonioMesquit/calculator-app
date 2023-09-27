@@ -267,7 +267,8 @@ button{
     color: white;
     box-shadow: 0 .3rem var(--shadow-reset);
     font-size: 2rem;
-}
+
+} 
 button:active{
     transform: scale(1) translateY(.5rem);
     box-shadow: none;
